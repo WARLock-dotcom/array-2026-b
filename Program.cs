@@ -9,18 +9,27 @@ static void ImprimirNotas(int[] notasx)
     }
 }
 
+//Funcion de promedio de notas
+static double PromedioNotas(int[] notasx)
+{
+    int suma = 0;
+    for(int i = 0; i < notasx.Length; i++)
+    {
+        suma += notasx[i];
+    }
+    return (double)suma / notasx.Length;
+}
+
 int[] notas = {15,18,12,17,20};
 
 //imprimir el arreglo de notas
 ImprimirNotas(notas);
 
 //promedio de las notas
-int suma = 0;
-for(int i = 0; i < notas.Length; i++)
-{
-    suma += notas[i];
-}
-Console.WriteLine($"El promedio de las notas es: {(double)suma / notas.Length:F2}");
+double promedio = PromedioNotas(notas);
+Console.WriteLine($"El promedio de las notas es: {promedio:F2}");
+
+
 
 
 
