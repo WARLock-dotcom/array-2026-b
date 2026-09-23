@@ -1,5 +1,6 @@
 ﻿//Funcion de impresion de notas
 using System.Data;
+using System.Xml.Linq;
 
 static void ImprimirNotas(int[] notasx)
 {
@@ -31,6 +32,21 @@ Console.WriteLine($"El promedio de las notas es: {promedio:F2}");
 
 
 
-
+//Imprimir minimo y maximo de las notas
+int min = notas[0];
+int max = notas[0];
+for(int i = 1; i < notas.Length; i++)
+{
+    if(notas[i] < min)
+    {
+        min = notas[i];
+    }
+    if(notas[i] > max)
+    {
+        max = notas[i];
+    }
+}
+Console.WriteLine($"La nota mínima es: {min}");
+Console.WriteLine($"La nota máxima es: {max}");
 
 
